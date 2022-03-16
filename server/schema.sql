@@ -25,6 +25,11 @@ CREATE TABLE messages (
   FOREIGN KEY(room_id) REFERENCES rooms(room_id)
   );
 
+INSERT INTO users (user_name) VALUES ("Sean");
+INSERT INTO rooms (room_name) VALUES ("Cool Room");
+
+
+
 
 
 

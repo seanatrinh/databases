@@ -1,6 +1,3 @@
-// MessagesView is an object which controls the DOM elements
-// responsible for displaying messages.
-
 var MessagesView = {
 
   $chats: $('#chats'),
@@ -20,13 +17,11 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-
     var $message = MessageView.render(message);
     MessagesView.$chats.prepend($message);
   },
 
   handleClick: function(event) {
-
     // Get username from data attribute
     var username = $(event.target).data('username');
     if (username === undefined) { return; }

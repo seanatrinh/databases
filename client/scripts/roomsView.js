@@ -1,6 +1,3 @@
-// RoomsView is an object which controls the DOM elements
-// responsible for displaying and selecting rooms.
-
 var RoomsView = {
 
   $button: $('#rooms button'),
@@ -22,19 +19,16 @@ var RoomsView = {
   },
 
   renderRoom: function(roomname) {
-
     var $option = $('<option>').val(roomname).text(roomname);
     RoomsView.$select.append($option);
   },
 
   handleChange: function(event) {
-
     Rooms.selected = RoomsView.$select.val();
     MessagesView.render();
   },
 
   handleClick: function(event) {
-
     var roomname = prompt('Enter room name');
     if (roomname) {
       Rooms.add(roomname, () => {

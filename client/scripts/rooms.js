@@ -1,7 +1,3 @@
-// This object houses all the room _data_ for the app.
-// Treat it like a data structure - add methods to interact
-// with and manipulate the data.
-
 var Rooms = {
 
 
@@ -28,7 +24,7 @@ var Rooms = {
     var length = Rooms._data.size;
 
     _.chain(messages)
-      .pluck('roomname')
+      .pluck('room_id')
       .uniq()
       .each(room => Rooms._data.add(room));
 
@@ -42,5 +38,5 @@ var Rooms = {
       callback(Rooms.items());
     }
   }
-  
+
 };

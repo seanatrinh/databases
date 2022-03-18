@@ -9,24 +9,14 @@ CREATE TABLE users (
   PRIMARY KEY (user_id)
 );
 
-CREATE TABLE rooms (
-  room_id INT NOT NULL AUTO_INCREMENT,
-  room_name VARCHAR(100) NOT NULL,
-  PRIMARY KEY (room_id)
-);
-
 CREATE TABLE messages (
   message_id INT NOT NULL AUTO_INCREMENT,
   message_text VARCHAR(1000) NOT NULL,
   user_id INT NOT NULL,
-  room_id INT NOT NULL,
+  room_name VARCHAR(100) NOT NULL,
   PRIMARY KEY (message_id),
-  FOREIGN KEY(user_id) REFERENCES users(user_id),
-  FOREIGN KEY(room_id) REFERENCES rooms(room_id)
+  FOREIGN KEY(user_id) REFERENCES users(user_id)
   );
-
-INSERT INTO users (user_name) VALUES ("Sean");
-INSERT INTO rooms (room_name) VALUES ("Cool Room");
 
 
 

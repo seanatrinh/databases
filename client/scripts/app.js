@@ -1,7 +1,3 @@
-// This App object represents the Chatterbox application.
-// It should initialize the other parts of the application
-// and begin making requests to the Parse API for data.
-
 var App = {
 
   $spinner: $('.spinner img'),
@@ -26,16 +22,13 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-
-      // Only update if we have messages.
+      // Don't bother to update if we have no messages
       if (data && data.length) {
         Rooms.update(data, RoomsView.render);
         Messages.update(data, MessagesView.render);
-
-        callback();
       }
+      callback();
       return;
-
     });
   },
 
